@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  appServer:
+    image: appserver:latest
+    container_name: 'appserver'
+    ports:
+      - '5500:8080'
+
+  appFront:
+    image: frontapp:latest
+    container_name: 'appfront'
+    ports:
+      - '3000:3000'
