@@ -1,10 +1,10 @@
-package com.example.moneytransferservice.controller;
+package com.example.moneytransferservice.service;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class TransferControllerTest {
+class TransferServiceTest {
 
     @Test
     void validateCardDate() {
@@ -12,7 +12,7 @@ class TransferControllerTest {
         final int currentMonth = 2;
         final int currentYear = 2022;
 
-        TransferController.validateCardDate(cardFromValidTill, currentMonth, currentYear);
+        TransferService.validateCardDate(cardFromValidTill, currentMonth, currentYear);
     }
 
     @Test
@@ -21,7 +21,7 @@ class TransferControllerTest {
         final int currentMonth = 2;
         final int currentYear = 2022;
 
-        assertThrows(RuntimeException.class, () -> TransferController.validateCardDate(cardFromValidTill, currentMonth, currentYear));
+        assertThrows(RuntimeException.class, () -> TransferService.validateCardDate(cardFromValidTill, currentMonth, currentYear));
     }
 
     @Test
@@ -30,6 +30,6 @@ class TransferControllerTest {
         final int currentMonth = 2;
         final int currentYear = 2022;
 
-        assertThrows(RuntimeException.class, () -> TransferController.validateCardDate(cardFromValidTill, currentMonth, currentYear));
+        assertThrows(RuntimeException.class, () -> TransferService.validateCardDate(cardFromValidTill, currentMonth, currentYear));
     }
 }
